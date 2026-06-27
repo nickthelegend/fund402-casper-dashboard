@@ -31,11 +31,10 @@ const ASSET_CONTRACT_HASH = (process.env.NEXT_PUBLIC_X402_ASSET_CONTRACT_HASH ??
 );
 const ASSET_DECIMALS = Number(process.env.NEXT_PUBLIC_X402_ASSET_DECIMALS ?? "9");
 
-/** Parse a decimal string ("12.5") into CEP-18 base units (bigint). */
+import { toBaseUnits as toBaseUnitsRaw } from "./units";
+/** Parse a decimal string into CEP-18 base units, defaulting to the asset's decimals. */
 export function toBaseUnits(decimal: string, decimals = ASSET_DECIMALS): bigint {
-  const [whole, frac = ""] = decimal.replace(/[^0-9.]/g, "").split(".");
-  const fracPadded = (frac + "0".repeat(decimals)).slice(0, decimals);
-  return BigInt(whole || "0") * 10n ** BigInt(decimals) + BigInt(fracPadded || "0");
+  return toBaseUnitsRaw(decimal, decimals);
 }
 
 /** Minimal subset of the CSPR.click SDK we use (the value from `useClickRef()`). */
