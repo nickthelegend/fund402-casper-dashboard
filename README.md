@@ -5,7 +5,7 @@ deposit CEP-18 liquidity that funds Just-In-Time loans for AI agents, and watch
 the pool work in real time — Total Value Locked, capital deployed, utilization,
 and a live borrower directory linking to cspr.live.
 
-Part of **[Fund402](../fund402)** (Casper Agentic Buildathon 2026).
+Part of **[Fund402](https://github.com/nickthelegend/fund402-casper)** (Casper Agentic Buildathon 2026) — **▶ [watch the 45-second demo](https://github.com/nickthelegend/fund402-casper/blob/main/promo/fund402-promo.mp4)**.
 
 ## Architecture
 
